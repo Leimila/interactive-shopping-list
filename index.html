@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interactive Shopping List</title>
+        <style>
+            .purchased {
+                text-decoration: line-through;
+                color: green;
+            }
+            #shoppingList {
+                padding: 0;
+                list-style: none;
+            }
+            li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f9f9f9; /* Light gray background */
+            border: 1px solid #ccc; /* Light border */
+        }
+        </style>
+
+</head>
+<body>
+    <h1> Shopping List</h1>
+    <input type="text" id="itemInput" placeholder="add an item">
+    <button id="addButton">add</button>
+    <button id="markPurchasedButton">Mark Purchased</button>
+    <button id="clearButton">Clear List</button>
+    <ul id="shoppingList"></ul>
+    <script src="script.js"></script>
+
+</body>
+</html>
