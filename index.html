@@ -1,34 +1,125 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Interactive Shopping List</title>
-        <style>
-            .purchased {
-                text-decoration: line-through;
-                color: green;
-            }
-            #shoppingList {
-                padding: 0;
-                list-style: none;
-            }
-            li {
-            padding: 10px;
-            margin: 5px 0;
-            background-color: #f9f9f9; /* Light gray background */
-            border: 1px solid #ccc; /* Light border */
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Shopping List</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            margin: 0;
+            padding: 20px;
         }
-        </style>
 
+        /* Main app container */
+        #app {
+            max-width: 600px; /* Limit the width of the app */
+            margin: 0 auto; /* Center the app */
+            background: white; /* White background for the app */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow effect */
+            padding: 30px; /* Padding inside the app */
+            border: 1px solid #e0e0e0; /* Light border for subtle definition */
+        }
+
+        /* Header styles */
+        h1 {
+            text-align: center; /* Center the title */
+            color: #333; /* Dark text color */
+            margin-bottom: 20px; /* Space below the title */
+            font-size: 2em; /* Larger font size for title */
+        }
+
+        /* Input field styles */
+        input[type="text"] {
+            width: calc(100% - 22px); /* Full width minus padding and border */
+            padding: 12px; /* Increased padding for comfort */
+            margin-bottom: 15px; /* Space below the input field */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Light border color */
+            font-size: 1em; /* Consistent font size */
+            transition: border-color 0.3s ease; /* Smooth transition for border color */
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff; /* Blue border on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        /* Button container styles */
+        .button-container {
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space buttons evenly */
+        }
+
+        /* Button styles */
+        button {
+            background-color: #007bff; /* Blue background for buttons */
+            color: white; /* White text color */
+            border: none; /* Remove default border */
+            padding: 12px 15px; /* Padding inside buttons */
+            border-radius: 5px; /* Rounded corners for buttons */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effect and scale on click */
+            flex-grow: 1; /* Allow buttons to grow and fill space equally */
+            margin-right: 10px; /* Space between buttons (except last) */
+        }
+
+        button:last-child {
+            margin-right: 0; /* No margin on the last button */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift effect on hover */
+        }
+
+        button:active {
+            transform: translateY(1px); /* Slight press effect on click */
+        }
+
+        /* Shopping list styles */
+        #shoppingList {
+            padding: 0;
+            list-style-type: none; /* Remove default bullets from list items */
+        }
+
+        /* List item styles */
+        li {
+            padding: 12px;
+            margin: 8px 0;
+            background-color: #f9f9f9; /* Light gray background for list items */
+            border-radius: 5px; /* Rounded corners for list items */
+            transition: background-color 0.3s ease, transform 0.2s ease; 
+        }
+
+        li:hover {
+            background-color: #e9ecef; /* Slightly darker gray on hover */
+            transform: scale(1.02); /* Slightly enlarge on hover for emphasis */
+        }
+
+        .purchased {
+            text-decoration: line-through; 
+            color: green;
+        }
+    </style>
 </head>
 <body>
-    <h1> Shopping List</h1>
-    <input type="text" id="itemInput" placeholder="add an item">
-    <button id="addButton">add</button>
-    <button id="markPurchasedButton">Mark Purchased</button>
-    <button id="clearButton">Clear List</button>
-    <ul id="shoppingList"></ul>
-    
-    <script src="script.js"></script>
+    <div id="app">
+        <h1>Shopping List</h1>
+        <input type="text" id="itemInput" placeholder="Add an item..." />
+        
+        <div class="button-container">
+          <button id="addButton">Add</button>
+          <button id="markPurchasedButton">Mark Purchased</button>
+          <button id="clearButton">Clear List</button>
+        </div>
 
+        <ul id="shoppingList"></ul>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
